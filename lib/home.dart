@@ -1,12 +1,31 @@
 import 'package:exam/emoj_itm.dart';
+import 'package:exam/exercise.dart';
+import 'package:exam/workout.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
   static const String routeName = 'HomeScreen';
+
+  HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<String> imgPath = [
+    'assets/images/ex1.png'
+        'assets/images/ex2.png'
+        'assets/images/ex3.png'
+        'assets/images/ex4.png'
+  ];
+
+  List<String> txt = ['Relaxation', 'Meditation', 'Beathing', 'Yoga'];
+
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -107,8 +126,7 @@ class HomeScreen extends StatelessWidget {
                               Text(
                                 'Feature',
                                 style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600),
+                                    fontSize: 18, fontWeight: FontWeight.w600),
                               ),
                               Spacer(),
                               Text(
@@ -131,176 +149,148 @@ class HomeScreen extends StatelessWidget {
                           image: AssetImage('assets/images/feature.png'),
                         ),
                         const SizedBox(height: 10),
-                        // AnimatedSmoothIndicator(
-                        //   activeIndex: yourActiveIndex,
-                        //   count: 6,
-                        //   effect: WormEffect(),
-                        // )
+                        AnimatedSmoothIndicator(
+                          activeIndex: 1,
+                          count: 3,
+                          effect: WormEffect(),
+                        )
                       ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Feature',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                                Spacer(),
-                                Text(
-                                  'See more',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xff027A48),
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.arrow_forward_ios,
+                    Column(
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Feature',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.w600),
+                              ),
+                              Spacer(),
+                              Text(
+                                'See more',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
                                   color: Color(0xff027A48),
                                 ),
-                              ],
-                            ),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Color(0xff027A48),
+                              ),
+                            ],
                           ),
-                          const SizedBox(height: 20),
-                          Container(
-                            // width: 326,
-                            // height: 168,
-                            child: const Image(
-                              image: AssetImage('assets/images/feature.png'),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          // AnimatedSmoothIndicator(
-                          //   activeIndex: yourActiveIndex,
-                          //   count: 6,
-                          //   effect: WormEffect(),
-                          // )
-                        ],
-                      ),
+                        ),
+                        const SizedBox(height: 20),
+                        const Image(
+                          image: AssetImage('assets/images/feature.png'),
+                        ),
+                        const SizedBox(height: 10),
+                        AnimatedSmoothIndicator(
+                          activeIndex: 2,
+                          count: 3,
+                          effect: WormEffect(),
+                        )
+                      ],
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Feature',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                                Spacer(),
-                                Text(
-                                  'See more',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xff027A48),
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.arrow_forward_ios,
+                    Column(
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Feature',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.w600),
+                              ),
+                              Spacer(),
+                              Text(
+                                'See more',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
                                   color: Color(0xff027A48),
                                 ),
-                              ],
-                            ),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Color(0xff027A48),
+                              ),
+                            ],
                           ),
-                          const SizedBox(height: 20),
-                          Container(
-                            // width: 326,
-                            // height: 168,
-                            child: const Image(
-                              image: AssetImage('assets/images/feature.png'),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          // AnimatedSmoothIndicator(
-                          //   activeIndex: yourActiveIndex,
-                          //   count: 6,
-                          //   effect: WormEffect(),
-                          // )
-                        ],
-                      ),
+                        ),
+                        const SizedBox(height: 20),
+                        const Image(
+                          image: AssetImage('assets/images/feature.png'),
+                        ),
+                        const SizedBox(height: 10),
+                        AnimatedSmoothIndicator(
+                          activeIndex: 3,
+                          count: 3,
+                          effect: WormEffect(),
+                        )
+                      ],
                     ),
                   ],
                   options: CarouselOptions(),
                 ),
               ),
-              GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 10.0,
-                  shrinkWrap: true,
-                  children: [
-                    Container(
-                      child: const Row(
-                        children: [
-                          Image(
-                            image: AssetImage('assets/images/ex1.png'),
-                          ),
-                          SizedBox(width: 5,),
-                          Text('Relaxation',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500),),
-                        ],
+              const SizedBox(height: 20),
+            Container(
+              width: 250,
+              height: 200,
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'Exercise',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w600),
                       ),
-                    ),
-                    Container(
-                      child: const Row(
-                        children: [
-                          Image(
-                            image: AssetImage('assets/images/ex2.png'),
-                          ),
-                          SizedBox(width: 5,),
-                          Text('Meditation',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500),),
-                        ],
+                      Spacer(),
+                      Text(
+                        'See more',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff027A48),
+                        ),
                       ),
-                    ),
-                    Container(
-                      child: const Row(
-                        children: [
-                          Image(
-                            image: AssetImage('assets/images/ex3.png'),
-                          ),
-                          SizedBox(width: 5,),
-                          Text('Beathing',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500),),
-                        ],
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        color: Color(0xff027A48),
                       ),
-                    ),
-                    Container(
-                      child: const Row(
-                        children: [
-                          Image(
-                            image: AssetImage('assets/images/ex4.png'),
-                          ),
-                          SizedBox(width: 5,),
-                          Text('Yoga',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500),),
-                        ],
-                      ),
-                    ),
-                  ]),
-              IconButton(onPressed: (){
-
-              },icon:  Icon(
-                Icons.arrow_forward,
-              ), )
+                    ],
+                  ),
+                  Exercise(),
+                ],
+              ),
+            ),
             ],
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, WorkOut.routeName);
+        },
+        child: Icon(Icons.arrow_forward_ios),
+      ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 1,
+        currentIndex: index,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.grey,
         unselectedItemColor: Colors.black,
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        onTap: (value) {
+           index=value;
+           setState(() {});
+        },
         iconSize: 30,
         backgroundColor: Colors.white,
         items: const [
