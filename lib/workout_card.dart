@@ -17,6 +17,7 @@ final String? imagepath;
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   decoration: BoxDecoration(
@@ -32,14 +33,11 @@ final String? imagepath;
                     ),
                   ),
                 ),
-                Container(
-                  child: Text(
-                    '$txt',style: TextStyle(fontWeight: FontWeight.w500),
-                  ),
+                Text(
+                  '$txt',style: TextStyle(fontWeight: FontWeight.w500),
                 ),
 
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.access_time_rounded,color: Color(0xff717BBC)),
                     Text(' $time',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
