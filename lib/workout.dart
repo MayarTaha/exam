@@ -1,3 +1,4 @@
+import 'package:exam/news.dart';
 import 'package:exam/workout_card.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
@@ -211,6 +212,12 @@ class _WorkOutState extends State<WorkOut> {
               ],
             ),
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, News.routeName);
+          },
+          child: Icon(Icons.arrow_forward_ios),
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: index,

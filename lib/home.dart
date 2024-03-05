@@ -31,11 +31,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Moody',
-          style: TextStyle(color: Colors.black),
-        ),
-        // backgroundColor: Colors.transparent,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
@@ -43,6 +38,10 @@ class _HomeScreenState extends State<HomeScreen> {
               image: AssetImage('assets/images/logo.png'),
             ),
           ),
+        ),
+        title: const Text(
+          'Moody',
+          style: TextStyle(color: Colors.black),
         ),
         actions: const [
           Padding(
@@ -112,39 +111,38 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Text(
+                      'Feature',
+                      style: TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                    Spacer(),
+                    Text(
+                      'See more',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff027A48),
+                      ),
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color(0xff027A48),
+                    ),
+                  ],
+                ),
+              ),
               Container(
-                width: 326,
+                width: double.infinity,
                 height: 230,
                 child: CarouselSlider(
                   items: [
                     Column(
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Row(
-                            children: [
-                              Text(
-                                'Feature',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w600),
-                              ),
-                              Spacer(),
-                              Text(
-                                'See more',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xff027A48),
-                                ),
-                              ),
-                              Icon(
-                                Icons.arrow_forward_ios,
-                                color: Color(0xff027A48),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 20),
                         const Image(
                           image: AssetImage('assets/images/feature.png'),
                         ),
@@ -158,32 +156,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Column(
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Row(
-                            children: [
-                              Text(
-                                'Feature',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w600),
-                              ),
-                              Spacer(),
-                              Text(
-                                'See more',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xff027A48),
-                                ),
-                              ),
-                              Icon(
-                                Icons.arrow_forward_ios,
-                                color: Color(0xff027A48),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 20),
                         const Image(
                           image: AssetImage('assets/images/feature.png'),
                         ),
@@ -197,32 +169,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Column(
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Row(
-                            children: [
-                              Text(
-                                'Feature',
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.w600),
-                              ),
-                              Spacer(),
-                              Text(
-                                'See more',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xff027A48),
-                                ),
-                              ),
-                              Icon(
-                                Icons.arrow_forward_ios,
-                                color: Color(0xff027A48),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 20),
                         const Image(
                           image: AssetImage('assets/images/feature.png'),
                         ),
