@@ -33,10 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Container(
-            child: const Image(
-              image: AssetImage('assets/images/logo.png'),
-            ),
+          child: const Image(
+            image: AssetImage('assets/images/logo.png'),
           ),
         ),
         title: const Text(
@@ -111,8 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               const SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Row(
                   children: [
                     Text(
@@ -141,12 +139,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 230,
                 child: CarouselSlider(
                   items: [
-                    Column(
+                    const Column(
                       children: [
-                        const Image(
+                        Image(
                           image: AssetImage('assets/images/feature.png'),
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10),
                         AnimatedSmoothIndicator(
                           activeIndex: 1,
                           count: 3,
@@ -154,12 +152,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         )
                       ],
                     ),
-                    Column(
+                    const Column(
                       children: [
-                        const Image(
+                        Image(
                           image: AssetImage('assets/images/feature.png'),
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10),
                         AnimatedSmoothIndicator(
                           activeIndex: 2,
                           count: 3,
@@ -167,12 +165,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         )
                       ],
                     ),
-                    Column(
+                    const Column(
                       children: [
-                        const Image(
+                        Image(
                           image: AssetImage('assets/images/feature.png'),
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10),
                         AnimatedSmoothIndicator(
                           activeIndex: 3,
                           count: 3,
@@ -190,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 200,
               child: Column(
                 children: [
-                  Row(
+                  const Row(
                     children: [
                       Text(
                         'Exercise',
@@ -224,7 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () {
           Navigator.pushNamed(context, WorkOut.routeName);
         },
-        child: Icon(Icons.arrow_forward_ios),
+        child: const Icon(Icons.arrow_forward_ios),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,

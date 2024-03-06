@@ -21,12 +21,12 @@ class _WorkOutState extends State<WorkOut> {
       child: Scaffold(
         appBar: AppBar(
           // leadingWidth: 15,
-          leading: CircleAvatar(
+          leading: const CircleAvatar(
             backgroundImage: AssetImage('assets/images/profile.png'),
           ),
           titleSpacing: 30,
-          title: Column(
-            children: const <Widget>[
+          title: const Column(
+            children: <Widget>[
               Text('Hello, Jade',
                   style: TextStyle(
                     color: Colors.black,
@@ -55,13 +55,13 @@ class _WorkOutState extends State<WorkOut> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                 ),
                 Container(
-                  color: Color(0xffF8F9FC),
-                  child: Row(
-                    children: const [
+                  color: const Color(0xffF8F9FC),
+                  child: const Row(
+                    children: [
                       Expanded(
                         child: Row(
                           children: [
@@ -83,7 +83,8 @@ class _WorkOutState extends State<WorkOut> {
                                 Text(
                                   '81 BPM',
                                   style: TextStyle(
-                                      fontSize: 18, fontWeight: FontWeight.bold),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -111,7 +112,8 @@ class _WorkOutState extends State<WorkOut> {
                                 Text(
                                   '32,5 %',
                                   style: TextStyle(
-                                      fontSize: 18, fontWeight: FontWeight.bold),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -141,7 +143,8 @@ class _WorkOutState extends State<WorkOut> {
                                 Text(
                                   ' 1000 Cal',
                                   style: TextStyle(
-                                      fontSize: 18, fontWeight: FontWeight.bold),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -151,9 +154,9 @@ class _WorkOutState extends State<WorkOut> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
-                Row(
-                  children: const [
+                const SizedBox(height: 20),
+                const Row(
+                  children: [
                     Text('Workout Programs',
                         style: TextStyle(
                           color: Colors.black,
@@ -162,51 +165,53 @@ class _WorkOutState extends State<WorkOut> {
                         )),
                   ],
                 ),
-                SizedBox(height: 20),
-                TabBar(
+                const SizedBox(height: 20),
+                const TabBar(
                   indicator: BoxDecoration(
-                    color: Colors.grey[600],
-                    borderRadius: BorderRadius.circular(20),
+                    //color: Colors.grey[600],
+                    border: Border(
+                      bottom: BorderSide(width: 1.5,color: Color(0xff363F72)),
+                    ),
                   ),
-                  tabs: const [
+                  tabs: [
                     Tab(
                       child: Text('All Type',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              color: Color(0xff363F72))),
+                              color: Color(0xff667085))),
                     ),
                     Tab(
                       child: Text('Full Body',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              color: Color(0xff363F72))),
+                              color: Color(0xff667085))),
                     ),
                     Tab(
                       child: Text('Upper',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              color: Color(0xff363F72))),
+                              color: Color(0xff667085))),
                     ),
                     Tab(
                       child: Text('Lower',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              color: Color(0xff363F72))),
+                              color: Color(0xff667085))),
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
-                WorkOutCard(
-                    date: '7 days',
-                    txt: 'Morning Yoga\nImprove mental focus.',
-                    time: '30 mins',
+                const SizedBox(height: 20),
+                const WorkOutCard(
+                  date: '7 days',
+                  txt: 'Morning Yoga\nImprove mental focus.',
+                  time: '30 mins',
                   imagepath: 'assets/images/yoga.png',
                 ),
-                SizedBox(height: 20),
-                WorkOutCard(
-                    date: '3 days',
-                    txt: 'Plank Exercise\nImprove posture and stability.',
-                    time: '30 mins',
+                const SizedBox(height: 20),
+                const WorkOutCard(
+                  date: '3 days',
+                  txt: 'Plank Exercise\nImprove posture and stability.',
+                  time: '30 mins',
                   imagepath: 'assets/images/plank.png',
                 ),
               ],
@@ -217,17 +222,17 @@ class _WorkOutState extends State<WorkOut> {
           onPressed: () {
             Navigator.pushNamed(context, News.routeName);
           },
-          child: Icon(Icons.arrow_forward_ios),
+          child: const Icon(Icons.arrow_forward_ios),
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: index,
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: Color(0xff363F72),
+          selectedItemColor: const Color(0xff363F72),
           unselectedItemColor: Colors.black,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           onTap: (value) {
-            index=value;
+            index = value;
             setState(() {});
           },
           iconSize: 30,

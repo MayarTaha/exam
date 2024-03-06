@@ -1,7 +1,5 @@
-import 'package:exam/home.dart';
 import 'package:flutter/material.dart';
-
-import 'exercise.dart';
+import 'package:exam/home.dart';
 import 'news.dart';
 import 'workout.dart';
 
@@ -16,8 +14,8 @@ class MyApp extends StatelessWidget{
         initialRoute: HomeScreen.routeName,
         routes: {
           HomeScreen.routeName: (context) => HomeScreen(),
-          News.routeName: (context) => News(),
           WorkOut.routeName: (context) => WorkOut(),
+          News.routeName: (context) => News(),
         });
   }
 }
